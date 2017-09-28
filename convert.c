@@ -45,17 +45,17 @@ int main(int argc, char *argv[]){
 		}
 	/* Если не указана шкала*/
 	else {
-		printf ("%f C:\n", c);
+		printf ("%.2f C:\n", c);
 		if (ctok(c) < 0)
 			printf("Menshe absolutnogo nulya!\n");
 		else
 			printf("%.2f F\n%.2f K\n", ctof(c), ctok(c));
-		printf ("%f F:\n", c);
+		printf ("%.2f F:\n", c);
 		if (ctok(ftoc(c)) < 0)	
 			printf("Menshe absolutnogo nulya!\n");
 		else
 			printf("%.2f C\n%.2f K\n", ftoc(c), ctok(ftoc(c)));
-		printf ("%f K:\n", c);
+		printf ("%.2f K:\n", c);
 		if (c < 0)
 			printf("Menshe absolutnogo nulya!\n");
 		else
