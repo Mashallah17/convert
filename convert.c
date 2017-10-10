@@ -1,7 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <ctype.h>
-#include <string.h>
 float ctof (float x){
 	return x*1.8+32;
 }
@@ -16,7 +14,13 @@ float ktoc (float x){
 }
 
 int main(int argc, char *argv[]){
-	float c = atof(argv[1]);
+	float c;
+	if (argc!=1)
+		c = atof(argv[1]);
+	else {
+		printf("Error!");
+		return 1;
+	}
 	if (argc==3)
 		switch (*argv[2]){
 			case 'C':
