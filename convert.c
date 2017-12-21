@@ -1,28 +1,35 @@
 #include<stdio.h>
 #include<stdlib.h>
-float ctof (float x){
+float ctof (float x)
+{
 	return x*1.8+32;
 }
-float ftoc (float x){
+float ftoc (float x)
+{
 	return (x-32)*5.0/9.0;
 }
-float ctok (float x){
+float ctok (float x)
+{
 	return x+273.15;
 }
-float ktoc (float x){
+float ktoc (float x)
+{
 	return x-273.15;
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 	float c;
 	if (argc!=1)
 		c = atof(argv[1]);
-	else {
+	else
+	{
 		printf("Error!");
 		return 1;
 	}
 	if (argc==3)
-		switch (*argv[2]){
+		switch (*argv[2])
+		{
 			case 'C':
 			case 'c':
 				if (ctok(c) < 0)
@@ -45,7 +52,8 @@ int main(int argc, char *argv[]){
 					printf("%.2f C\n%.2f F", ktoc(c), ctof(ktoc(c)));
 				break;
 		}
-	else {
+	else
+	{
 		printf ("%.2f C:\n", c);
 		if (ctok(c) < 0)
 			printf("Temperature is less than absolute zero!\n");
